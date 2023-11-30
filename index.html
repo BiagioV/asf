@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #18af83; /* Verde brillante */
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      background-color: #18af83; /* Verde brillante */
+      color: #ffffff; /* Testo bianco */
+      padding: 10px;
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .back-arrow {
+      display: inline-block;
+      font-size: 18px;
+      color: #ffffff; /* Colore della freccia bianco */
+      cursor: pointer;
+      position: absolute;
+      left: 20px; /* Spostato leggermente verso destra */
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 16px; /* Riduci la dimensione del font */
+    }
+
+    /* Aggiungi stili aggiuntivi per il contenuto della pagina */
+    .content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .white-box {
+      background-color: #ffffff; /* Sfondo bianco */
+      padding: 15px; /* Ridotto il padding */
+      margin: 5px auto; /* Margin: alto/basso auto, laterale automatico (centrato orizzontalmente) */
+      border-radius: 10px; /* Bordi arrotondati */
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      max-width: 400px; /* Larghezza massima del rettangolo */
+    }
+
+    /* Logo in alto a sinistra */
+    .logo {
+      width: 20px; /* Dimensioni del logo */
+      height: 20px;
+      margin-bottom: 10px; /* Spazio tra il logo e il titolo */
+      border-radius: 50%; /* Bordi arrotondati */
+    }
+
+    /* Titolo in grassetto 'MENS. EXTRA. GENERICO' color verde acqua */
+    .title {
+      font-weight: bold;
+      color: #00CED1; /* Verde acqua */
+      margin-bottom: 10px; /* Spazio tra il titolo e il rettangolo delle informazioni tessera */
+      font-size: 18px; /* Dimensione del font aumentata */
+    }
+
+    /* Rettangolo di colore leggermente più scuro con icona persona e frase 'Informazioni tessera' */
+    .info-box {
+      background-color: #f2f2f2; /* Colore leggermente più scuro del bianco */
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; /* Spazio tra il rettangolo e il simbolo minore */
+      border-radius: 8px; /* Bordi arrotondati */
+      width: 90%;
+    }
+
+    /* Testo 'Informazioni tessera' con margine su tutti e due i lati */
+    .info-text {
+      margin: 0 20px; /* Aggiunto spazio a sinistra e destra */
+      font-size: 12px;
+      font-weight: bold; /* Testo in grassetto */
+    }
+
+    .info-box2.verde{
+      background-color: #18af83; /* Verde brillante */
+      color: white;
+    }
+
+
+    /* Simbolo minore che punta verso il basso */
+    .down-arrow {
+      font-size: 18px;
+      margin-left: auto; /* Allinea a destra all'interno del container */
+      cursor: pointer;
+    }
+
+    /* Nuova info-box per 'Controllo validazione' con QR Code */
+    .info-box2 {
+      background-color: #f2f2f2; /* Colore leggermente più scuro del bianco */
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px; /* Bordi arrotondati */
+      width: 90%;
+    }
+
+    .info-sinistra{
+      background-color: #f2f2f2; /* Colore leggermente più scuro del bianco */
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      border-radius: 8px; /* Bordi arrotondati */
+      width: 90%;
+    }
+
+    /* Icona biglietto del bus o del cinema */
+    .ticket-icon {
+      font-size: 20px;
+      margin-bottom: 5px; /* Spazio tra l'icona e la scritta 'Controllo e Validazione' */
+    }
+
+    /* Testo 'Controllo validazione' con margine su tutti e due i lati */
+    .info-text2 {
+      margin: 0 20px; /* Aggiunto spazio a sinistra e destra */
+      font-size: 12px;
+      font-weight: bold; /* Testo in grassetto */
+    }
+
+    /* QR Code immagine */
+    .qr-code {
+      width: 150px; /* Dimensioni dell'immagine del QR Code */
+      height: 150px;
+      margin-bottom: 10px; /* Spazio tra il QR Code e la frase 'Ingrandisci QRCode' */
+    }
+
+    /* Testo 'Ingrandisci QRCode' sottolineato e in grassetto */
+    .enlarge-qrcode {
+      font-size: 12px;
+      font-weight: bold; /* Testo in grassetto */
+      text-decoration: underline; /* Testo sottolineato */
+    }
+
+    /* Spazio tra il QR Code e la frase 'Ingrandisci QRCode' */
+    .spacer {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="back-arrow" onclick="goBack()">&lt;</div>
+    <h1>Ticket Attivo</h1>
+  </div>
+
+  <div class="content" style="">
+    <div class="white-box">
+      <!-- Contenuto della tua pagina -->
+      <img class="logo" src="asf.png" alt="Logo">
+      <div class="title">MENS. EXTRA. GENERICO</div>
+      <div class="info-box">
+        <!-- Rettangolo delle informazioni tessera con icona persona -->
+        <div style="background-color: #e6e6e6; padding: 5px; border-radius: 50%;">
+          <!-- FontAwesome -->
+          <i class="fas fa-user"></i>
+          <!-- Material Icons -->
+          <!-- <i class="material-icons">person</i> -->
+        </div>
+        <div class="info-text">Informazioni tessera</div>
+        <div class="down-arrow">&#9660;</div>
+      </div>
+
+      <div class="info-box" style="margin-bottom: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">
+        <!-- Rettangolo delle informazioni tessera con icona persona -->
+        <div style="background-color: #e6e6e6; padding: 0px; border-radius: 50%;">
+          <!-- FontAwesome -->
+          <div class="ticket-icon">🎫</div>
+          <!-- Material Icons -->
+          <!-- <i class="material-icons">person</i> -->
+        </div>
+        <div class="info-text">Controllo validazione</div>
+        <div class="down-arrow">&#9660;</div>
+      </div>
+
+
+      <!-- Nuova info-box per 'Controllo validazione' con QR Code -->
+      <div class="info-box2" style="border-top-left-radius: 0px; border-top-right-radius: 0px;">
+        <!-- Spazio tra l'icona e il QR Code -->
+        <div class="spacer"></div>
+        <!-- Immagine del QR Code -->
+        <img class="qr-code" src="qr.png" alt="QR Code" width: 80%;>
+        <!-- Spazio tra il QR Code e la frase 'Ingrandisci QRCode' -->
+        <div class="spacer"></div>
+        <!-- Testo 'Ingrandisci QRCode' sottolineato e in grassetto -->
+        <div class="enlarge-qrcode">Ingrandisci QRCode</div>
+      </div>
+
+            <!-- Nuova info-box per 'Controllo validazione' con QR Code -->
+      <div class="info-box2 verde" style="margin-top: 10px;">
+        <!-- Spazio tra l'icona e il QR Code -->
+        <div class="info-text" style="text-align: left;">Da CAVALLASCA a COMO Valido dal 01/12/2023 a 31/12/2023</div>
+      </div>
+
+      <div class="info-sinistra" style="margin: 0px; background-color: white;">
+        <!-- Spazio tra l'icona e il QR Code -->
+        <div class="info-text" style="text-align: left; margin: 0px; font-weight: 400;">Emesso il:</div>
+        <div class="info-text" style="text-align: left; margin: 0px;">01/12/2023 - 07:00</div>
+        <div class="spacer"></div>
+        <div class="info-text" style="text-align: left; margin: 0px; font-weight: 400;">Costo</div>
+        <div class="info-text" style="text-align: left; margin: 0px;">0,00&euro;</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
